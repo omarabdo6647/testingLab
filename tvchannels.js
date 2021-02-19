@@ -66,6 +66,7 @@ class ChannelManager {
     // Unsubscribe from the channel.  If the channel is not currently subscribed this
     // operation is ignored.
     unsubscribeChannel(chNum) {
+        this.#allSubscriptions = this.#allSubscriptions.filter(x => x !== chNum)
     }
 
     // Return the number of currently subscribed channels
