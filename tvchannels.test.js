@@ -71,3 +71,17 @@ test('Test countChannels Function', () => {
         .toBe(5)
 })
 
+//==========================================================================================
+// getChannel
+//==========================================================================================
+test('Test getChannel Function, get exist channel', () => {
+    let c = [manager.getChannel(1)]
+    expect(c.length)
+        .toBe(1)
+
+})
+test('Test getChannel Function, get unexist channel', () => {
+    expect(manager.getChannel(1546))
+        .toBe(undefined)
+})
+
