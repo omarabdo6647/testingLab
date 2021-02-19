@@ -47,7 +47,7 @@ class ChannelManager {
     // return the actual object!  If you get a channel and change information about it (say its name) and
     // ask again for the same TV channel, you will not see the change that you just made.  If the
     // channel does not exist you will get back undefined.
-    getChannel = chNum => pass
+    getChannel = chNum => this.#allChannels.find((x) => x.channel == chNum)
 
     // Add the channel number to the subscriptions.  The function returns true if
     // the operation was successful and false if the channel was not already subscribed.
