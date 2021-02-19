@@ -28,3 +28,30 @@ test('Test addChannel Function, add exist channel', () => {
         .toBe(false)
 
 })
+
+//==========================================================================================
+// deleteChannel
+//==========================================================================================
+
+test('Test deleteChannel Function, delete unexist channel', () => {
+    let check = true
+    try {
+        manager.deleteChannel(546221655)
+    } catch {
+        check = false
+    }
+    expect(check)
+        .toBe(false)
+
+})
+test('Test deleteChannel Function, delete exist channel', () => {
+    let check = true
+    try {
+        manager.deleteChannel(5)
+    } catch {
+        check = false
+    }
+    expect(check)
+        .toBe(true)
+
+})
