@@ -97,3 +97,28 @@ test('Test subscribeChannel Function, subscribe subscribed channel', () => {
         .toBe(false)
 })
 
+//==========================================================================================
+// unsubscribeChannel
+//==========================================================================================
+test('Test unsubscribeChannel Function', () => {
+    let c = true
+    let manager2 = new ChannelManager()
+    manager2.addChannel(new TVChannel(1, 'M+', 1, 'Music'))
+    manager2.addChannel(new TVChannel(2, 'Zee Aflam', 7, 'Movies'))
+    manager2.addChannel(new TVChannel(3, 'Russia Today', 5, 'News'))
+    manager2.addChannel(new TVChannel(4, 'CBC', 3, 'News'))
+    manager2.addChannel(new TVChannel(5, 'Bein', 9, 'Sports'))
+    manager2.subscribeChannel(1)
+    manager2.subscribeChannel(2)
+    manager2.subscribeChannel(3)
+    try {
+        manager2.unsubscribeChannel(5)
+        manager2.unsubscribeChannel(2)
+        manager2.unsubscribeChannel(102)
+    }
+    catch {
+        c = false
+    }
+    expect(c)
+    .toBe(true)
+})
