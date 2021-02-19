@@ -41,7 +41,7 @@ class ChannelManager {
     }
 
     // Returns the number of channels.
-    countChannels = () => pass
+    countChannels = () => this.#allChannels.length
 
     // Returns a copy of the TV channel with the given channel number.  Notice that it does not
     // return the actual object!  If you get a channel and change information about it (say its name) and
