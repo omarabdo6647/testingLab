@@ -70,7 +70,7 @@ class ChannelManager {
     }
 
     // Return the number of currently subscribed channels
-    countSubcribedChannels = () => pass
+    countSubcribedChannels = () => this.#allSubscriptions.length
 
     // Return the cost (total) of all currently subscribed channels
     totalSubscribedCost = () => {
