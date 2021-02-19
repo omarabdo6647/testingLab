@@ -23,8 +23,11 @@ class ChannelManager {
     // Add a new channel to the management system.  If a channel already exists with the
     // same channel number this method will throw a DuplicateChannelException.
     addChannel(ch) {
-      
-        
+        let foundChannel = this.#allChannels.find((x) => x.channel == ch.channel)
+        if (foundChannel) {
+            throw new DuplicateChannelException(`Adding Channel ${ch.channel}`)
+        }
+        this.#allChannels.push(ch)
     }
 
     // Remove a channel from the management system.  If the channel does not exist, the
