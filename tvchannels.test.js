@@ -85,3 +85,15 @@ test('Test getChannel Function, get unexist channel', () => {
         .toBe(undefined)
 })
 
+//==========================================================================================
+// subscribeChannel
+//==========================================================================================
+test('Test subscribeChannel Function, subscribe unsubscribed channel', () => {
+    expect(manager.subscribeChannel(1))
+        .toBe(true)
+})
+test('Test subscribeChannel Function, subscribe subscribed channel', () => {
+    expect(manager.subscribeChannel(1))
+        .toBe(false)
+})
+
