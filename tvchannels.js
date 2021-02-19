@@ -33,7 +33,11 @@ class ChannelManager {
     // Remove a channel from the management system.  If the channel does not exist, the
     // method will throw a ChannelNotFound exception.
     deleteChannel = chNum => {
-      
+        let foundChannel = this.#allChannels.find((x) => x.channel == chNum)
+        if (!foundChannel)
+            throw new Error('ChannelNotFound')
+        this.#allChannels = this.#allChannels.filter((x) => x.channel !== chNum)
+        return this.#allChannels
     }
 
     // Returns the number of channels.
@@ -49,7 +53,7 @@ class ChannelManager {
     // the operation was successful and false if the channel was not already subscribed.
     // No exception is thrown.
     subscribeChannel = chNum => {
-     
+
     }
 
     // Unsubscribe from the channel.  If the channel is not currently subscribed this
@@ -62,7 +66,7 @@ class ChannelManager {
 
     // Return the cost (total) of all currently subscribed channels
     totalSubscribedCost = () => {
-      
+
     }
 
     // Returns the next subscribed channel (in order).  Suppose you are
@@ -71,7 +75,7 @@ class ChannelManager {
     // If there are no currently subscribed channels, this function will throw the exception
     // NoSubscribedChannels.
     nextSubscribedChannel = currentCh => {
-      
+
     }
 
     // Returns the previous subscribed channel (in order).  Suppose you are
@@ -80,7 +84,7 @@ class ChannelManager {
     // If there are no currently subscribed channels, this function will throw the exception
     // NoSubscribedChannels.
     previousSubscribedChannel(currentCh) {
-   
+
 
     }
 
